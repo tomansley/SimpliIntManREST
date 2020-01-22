@@ -1,10 +1,10 @@
 function getConfigList(success, error) {
-  var soql = "SELECT Id, Name, Class_Name__c,Description__c,Allow_Multiples__c,Parent_Object__c,SFDC_Object_API_Name__c FROM Simpli__Simpli_Object__c WHERE Is_Active__c = true ORDER BY Name";
+  var soql = "SELECT Id, Name, Simpli__Class_Name__c, Simpli__Description__c, Simpli__Allow_Multiples__c, Simpli__Parent_Object__c, Simpli__SFDC_Object_API_Name__c FROM Simpli__Simpli_Object__c WHERE Is_Active__c = true ORDER BY Name";
   force.query(soql, success, error);
 }
 
 function getConfigDetails(configId, success, error) {
-    var soql = "SELECT Id, Name, Allow_Overrides__c, Allow_Multiples__c, External_Name__c, Is_Required__c, Type__c, Value__c, External_Index__c, Is_Formula__c, Formula__c, Is_Lookup__c, Lookup_Field__c, Lookup_Id_Value__c, Lookup_Return_Field__c FROM Simpli__Simpli_Attributes__c WHERE Simpli__Parent_Object__c = '" + configId + "'";
+    var soql = "SELECT Id, Name, Simpli__Allow_Overrides__c, Simpli__Allow_Multiples__c, Simpli__External_Name__c, Simpli__Is_Required__c, Simpli__Type__c, Simpli__Value__c, Simpli__External_Index__c, Simpli__Is_Formula__c, Simpli__Formula__c, Simpli__Is_Lookup__c, Simpli__Lookup_Field__c, Simpli__Lookup_Id_Value__c, Simpli__Lookup_Return_Field__c FROM Simpli__Simpli_Attributes__c WHERE Simpli__Parent_Object__c = '" + configId + "'";
   force.query(soql, success, error);
 }
 
