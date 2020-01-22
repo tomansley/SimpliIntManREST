@@ -37,27 +37,37 @@ function showConfigDetails(configId) {
 
     getConfigDetails(configId,
         function (data) {
-            var config = data.records[0],
+            var attribs = data.records,
             html =
                 '<div class="page">' +
                 '<header class="bar bar-nav">' +
                 '<a class="btn btn-link btn-nav pull-left" href="#"><span class="icon icon-left-nav"></span>Back</a>' +
-            '<h1 class="title">Configurations</h1>' +
+            '<h1 class="title">Configuration Attributes</h1>' +
                 '</header>' +
                 '<div class="content">' +
-                    '<div class="card">' +
-                        '<ul class="table-view">' +
-                            '<li class="table-view-cell">' +
-                                '<h4>' + config.Name + '</h4>' +
-                                '<p>' + config.Class_Name__c + '</p>' +
-                            '</li>' +
-                            '<li class="table-view-cell">SFDC Object: ' +
-                                config.SFDC_Object_API_Name__c +
-                            '</li>' +
-                            '<li class="table-view-cell">' +
-                                (config.Description__c || 'No description') +
-                            '</li>' +
-                        '</ul>' +
+                    '<div class="card">';
+
+                    for (var i=0; i<attribs.length; i++) {
+                        var attrib = data.records[i];
+                        html += '<ul class="table-view">' +
+                                    '<li class="table-view-cell">' +
+                                        '<h4>' + attrib.Name + '</h4>' +
+                                        '<p>Allow Overrides: ' + attrib.Simpli__Allow_Overrides__c + '</p>' +
+                                        '<p>Allow Multiples: ' + attrib.Simpli__Allow_Multiples__c + '</p>' +
+                                        '<p>External Name: ' + attrib.Simpli__External_Name__c + '</p>' +
+                                        '<p>Is Required: ' + attrib.Simpli__Is_Required__c + '</p>' +
+                                        '<p>Type: ' + attrib.Simpli__Type__c + '</p>' +
+                                        '<p>Value: ' + attrib.Simpli__Value__c + '</p>' +
+                                        '<p>External Index: ' + attrib.Simpli__External_Index__c + '</p>' +
+                                        '<p>Is Formula: ' + attrib.Simpli__Is_Formula__c + '</p>' +
+                                        '<p>Formula: ' + attrib.Simpli__Formula__c + '</p>' +
+                                        '<p>Is Lookup: ' + attrib.Simpli__Is_Lookup__c + '</p>' +
+                                        '<p>Lookup Field: ' + attrib.Simpli__Lookup_Field__c + '</p>' +
+                                        '<p>Lookup Id Value: ' + attrib.Simpli__Lookup_Id_Value__c + '</p>' +
+                                        '<p>Lookup Return Field: ' + attrib.Simpli__Lookup_Return_Field__c + '</p>' +
+                                    '</li>' +
+                                '</ul>';
+                    }
                     '</div>' +
                 '</div>' +
                 '</div>';
