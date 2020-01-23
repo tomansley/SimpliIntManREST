@@ -128,6 +128,7 @@ function showConfigDetails(configId) {
                                 '<th padding="5px" width="90px">Lookup Field</th>' +
                                 '<th padding="5px" width="90px">Lookup Id Value</th>' +
                                 '<th padding="5px" width="90px">Lookup Return Field</th>' +
+                                '<th padding="5px" width="190px">Processing Value</th>' +
                             '</tr>' +
                         '</table>';
 
@@ -149,7 +150,7 @@ function showConfigDetails(configId) {
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Field__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Id_Value__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Return_Field__c + '</td>' +
-                                        '<td padding="5px" width="90px"><input type="text" onchange="updateValue(event)" name="' + attrib.Simpli__External_Name__c + '"></input>' +
+                                        '<td padding="5px" width="190px"><input style="width: 240px;" type="text" onchange="updateValue(event)" name="' + attrib.Simpli__External_Name__c + '"></input>' +
                                     '</tr>' +
                                 '</table>';
                     }
