@@ -18,6 +18,8 @@ function updateValue(event) {
 function processConfig(event) {
     console.log('Button was pressed');
     var valuesMap = new Map();
+    var success;
+    var error;
     var jsonStr = "{\"requestData\":{\"processName\":\"Example - Account Insert\",\"fields\":[";
 
     for (let [k, v] of this.requestDataMap) {
@@ -33,9 +35,9 @@ function processConfig(event) {
 
 
 
-    force.request({path: "/services/apexrest/Simpli/Simpli/", method: "POST", contentType: "application/json", data: jsonStr})
-    .then(result => {
-        console.log(result)
+    force.request({path: "/services/apexrest/Simpli/Simpli/", method: "POST", contentType: "application/json", data: jsonStr}. success, error)
+    .then(success => {
+        console.log(success)
     })
     .catch(error => {
         console.log(error);
