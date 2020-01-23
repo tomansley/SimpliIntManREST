@@ -75,6 +75,7 @@ function processConfig(event) {
 }
 
 function showConfigList() {
+    requestDataMap = new Map();
     getConfigList(
         function (data) {
             var configs = data.records,
