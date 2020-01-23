@@ -48,8 +48,8 @@ function showConfigDetails(configId) {
                     '<div class="card">';
                         '<ul class="table-view">' +
                             '<li class="table-view-cell">' +
-                                '<table>' +
-                                    '<tr>' +
+                                '<table cellpadding="10">' +
+                                    '<th>' +
                                         '<td>Name</td>' +
                                         '<td>Allow Overrides</td>' +
                                         '<td>Allow Multiples</td>' +
@@ -64,7 +64,7 @@ function showConfigDetails(configId) {
                                         '<td>Lookup Field</td>' +
                                         '<td>Lookup Id Value</td>' +
                                         '<td>Lookup Return Field</td>' +
-                                    '</tr>' +
+                                    '</th>' +
                                 '</table>' +
                             '</li>' +
                         '</ul>';
@@ -73,7 +73,7 @@ function showConfigDetails(configId) {
                         var attrib = data.records[i];
                         html += '<ul class="table-view">' +
                                     '<li class="table-view-cell">' +
-                                        '<table>' +
+                                        '<table cellpadding="10">' +
                                             '<tr>' +
                                                 '<td>' + attrib.Name + '</td>' +
                                                 '<td>' + attrib.Simpli__Allow_Overrides__c + '</td>' +
