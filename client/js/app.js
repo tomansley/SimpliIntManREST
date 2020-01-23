@@ -18,12 +18,14 @@ function updateValue(event) {
 function processConfig(event) {
     console.log('Button was pressed');
     var valuesMap = new Map();
-    var jsonStr = "{\"requestData\":{\"processName\":\"Test Name\",\"fields\"[";
+    var jsonStr = "{\"requestData\":{\"processName\":\"Example - Account Insert\",\"fields\":[";
 
     for (let [k, v] of this.requestDataMap) {
         jsonStr += "{\"fieldName\":\"" + k + "\",\"fieldValue\":\"" + v + "\"},";
         console.log('Adding key/value pair - (' + k + ',' + v + ')');
     }
+
+    jsonStr = jsonStr.slice(0, -1); //remove last comma
 
     jsonStr += "]}}";
 
