@@ -38,32 +38,6 @@ function processConfig(event) {
     });
 }
 
-
-    {
-        "requestData" :
-        {
-            "processName":"Example - Account Insert",
-            "fields":[
-                {"fieldValue":"Test Account Name 12534",
-                 "fieldName":"Account Name"},
-                {"fieldValue":"123",
-                 "fieldName":"Number of Employees"},
-                {"fieldValue":"10101",
-                 "fieldName":"Zip"}
-            ]
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
 function showConfigList() {
     getConfigList(
         function (data) {
