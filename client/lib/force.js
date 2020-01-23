@@ -351,7 +351,6 @@ var force = (function () {
                     );
                 } else {
                     console.error(xhr.responseText);
-                    alert(xhr.responseText);
                     //var error = xhr.responseText ? JSON.parse(xhr.responseText) : {message: 'An error has occurred'};
                     if (errorHandler) {
                         errorHandler(xhr.responseText);
