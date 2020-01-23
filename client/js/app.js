@@ -55,7 +55,7 @@ function processConfig(event) {
                     '</table>';
 
                     for (var i=0; i<result.fields.length; i++) {
-                        var attrib = data.result[i];
+                        var attrib = result.fields[i];
                         html += '<table>' +
                                     '<tr>' +
                                         '<td padding="5px" width="190px">' + attrib.fieldName + '</td>' +
