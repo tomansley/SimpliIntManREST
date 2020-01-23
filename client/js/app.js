@@ -8,6 +8,14 @@ function getConfigDetails(configId, success, error) {
   force.query(soql, success, error);
 }
 
+function updateValue() {
+    console.log('Value updated');
+}
+
+function processConfig() {
+    console.log('Button was pressed');
+}
+
 function showConfigList() {
     getConfigList(
         function (data) {
@@ -42,51 +50,53 @@ function showConfigDetails(configId) {
                 '<div class="page">' +
                 '<header class="bar bar-nav">' +
                 '<a class="btn btn-link btn-nav pull-left" href="#"><span class="icon icon-left-nav"></span>Back</a>' +
-            '<h1 class="title">Configuration Attributes</h1>' +
+                '<h1 class="title">Configuration Attributes</h1>' +
                 '</header>' +
                 '<div class="content">' +
                     '<div class="card">' +
-                                '<table>' +
-                                    '<th>' +
-                                        '<td padding="5px" width="190px">Name</td>' +
-                                        '<td padding="5px" width="90px">Allow Overrides</td>' +
-                                        '<td padding="5px" width="90px">Allow Multiples</td>' +
-                                        '<td padding="5px" width="90px">External Name</td>' +
-                                        '<td padding="5px" width="90px">Is Required</td>' +
-                                        '<td padding="5px" width="90px">Type</td>' +
-                                        '<td padding="5px" width="90px">Value</td>' +
-                                        '<td padding="5px" width="90px">External Index</td>' +
-                                        '<td padding="5px" width="90px">Is Formula</td>' +
-                                        '<td padding="5px" width="90px">Formula</td>' +
-                                        '<td padding="5px" width="90px">Is Lookup</td>' +
-                                        '<td padding="5px" width="90px">Lookup Field</td>' +
-                                        '<td padding="5px" width="90px">Lookup Id Value</td>' +
-                                        '<td padding="5px" width="90px">Lookup Return Field</td>' +
-                                    '</th>' +
-                                '</table>';
+                        '<table>' +
+                            '<tr>' +
+                                '<th padding="5px" width="190px">Name</th>' +
+                                '<th padding="5px" width="90px">Allow Overrides</th>' +
+                                '<th padding="5px" width="90px">Allow Multiples</th>' +
+                                '<th padding="5px" width="90px">External Name</th>' +
+                                '<th padding="5px" width="90px">Is Required</th>' +
+                                '<th padding="5px" width="90px">Type</th>' +
+                                '<th padding="5px" width="90px">Value</th>' +
+                                '<th padding="5px" width="90px">External Index</th>' +
+                                '<th padding="5px" width="90px">Is Formula</th>' +
+                                '<th padding="5px" width="90px">Formula</th>' +
+                                '<th padding="5px" width="90px">Is Lookup</th>' +
+                                '<th padding="5px" width="90px">Lookup Field</th>' +
+                                '<th padding="5px" width="90px">Lookup Id Value</th>' +
+                                '<th padding="5px" width="90px">Lookup Return Field</th>' +
+                            '</tr>' +
+                        '</table>';
 
                     for (var i=0; i<attribs.length; i++) {
                         var attrib = data.records[i];
                         html += '<table>' +
-                                            '<tr>' +
-                                                '<td padding="5px" width="190px">' + attrib.Name + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Allow_Overrides__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Allow_Multiples__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__External_Name__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Is_Required__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Type__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Value__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__External_Index__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Is_Formula__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Formula__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Is_Lookup__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Field__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Id_Value__c + '</td>' +
-                                                '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Return_Field__c + '</td>' +
-                                            '</tr>' +
-                                        '</table>';
+                                    '<tr>' +
+                                        '<td padding="5px" width="190px">' + attrib.Name + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Allow_Overrides__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Allow_Multiples__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__External_Name__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Is_Required__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Type__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Value__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__External_Index__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Is_Formula__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Formula__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Is_Lookup__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Field__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Id_Value__c + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Return_Field__c + '</td>' +
+                                        '<td padding="5px" width="90px"> + <input type="text" onchange="updateValue()" name="' + attrib.Simpli__External_Name__c + '"></input>' +
+                                    '</tr>' +
+                                '</table>';
                     }
-                    '</div>' +
+                    html += '<button type="button" onclick="processConfig()">Process Config</button>'
+                    html += '</div>' +
                 '</div>' +
                 '</div>';
             slider.slidePage($(html));
