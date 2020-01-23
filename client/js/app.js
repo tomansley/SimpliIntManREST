@@ -1,5 +1,5 @@
 function getConfigList(success, error) {
-  var soql = "SELECT Id, Name, Simpli__Class_Name__c, Simpli__Description__c, Simpli__Allow_Multiples__c, Simpli__Parent_Object__c, Simpli__SFDC_Object_API_Name__c FROM Simpli__Simpli_Object__c WHERE Simpli__Is_Active__c = true ORDER BY Name";
+  var soql = "SELECT Id, Name, Simpli__Class_Name__c, Simpli__Description__c, Simpli__Allow_Multiples__c, Simpli__Parent_Object__c, Simpli__SFDC_Object_API_Name__c FROM Simpli__Simpli_Object__c WHERE Simpli__Parent_Object__c = null AND Simpli__Is_Active__c = true ORDER BY Name";
   force.query(soql, success, error);
 }
 
