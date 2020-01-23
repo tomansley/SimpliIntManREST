@@ -98,7 +98,7 @@ function showConfigDetails(configId) {
                                     '</tr>' +
                                 '</table>';
                     }
-                    html += '<button type="button" onclick="processConfig(event)">Process Config</button>'
+                    html += '<div><button type="button" onclick="processConfig(event)">Process Config</button></div>'
                     html += '</div>' +
                 '</div>' +
                 '</div>';
