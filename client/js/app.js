@@ -45,7 +45,7 @@ function showConfigDetails(configId) {
             '<h1 class="title">Configuration Attributes</h1>' +
                 '</header>' +
                 '<div class="content">' +
-                    '<div class="card">';
+                    '<div class="card">' +
                                 '<table>' +
                                     '<th>' +
                                         '<td padding="5px" width="190px">Name</td>' +
