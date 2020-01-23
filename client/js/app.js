@@ -17,6 +17,15 @@ function updateValue(event) {
 
 function processConfig(event) {
     console.log('Button was pressed');
+    var valuesMap = new Map();
+    var strValuesMap;
+
+    for (let [k, v] of this.requestDataMap) {
+        console.log('Adding key/value pair - (' + k + ',' + v + ')');
+        valuesMap.set(k, v);
+    }
+
+    strValuesMap = JSON.stringify( Array.from(valuesMap) );
 }
 
 function showConfigList() {
@@ -98,7 +107,7 @@ function showConfigDetails(configId) {
                                     '</tr>' +
                                 '</table>';
                     }
-                    html += '<div><button type="button" onclick="processConfig(event)">Process Config</button></div>'
+                    html += '<div display: grid;><button type="button" onclick="processConfig(event)">Process Config</button></div>'
                     html += '</div>' +
                 '</div>' +
                 '</div>';
