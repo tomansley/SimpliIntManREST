@@ -37,7 +37,7 @@ function processConfig(event) {
 
     force.request({path: "/services/apexrest/Simpli/Simpli/", method: "POST", contentType: "application/json", data: jsonStr}, 
     function (result) {
-        alert("Success: " + JSON.stringify(result));
+        console.log("Success: " + JSON.stringify(result));
         html =
         '<div class="page">' +
             '<header class="bar bar-nav">' +
@@ -54,7 +54,7 @@ function processConfig(event) {
                         '</tr>' +
                     '</table>';
 
-                    for (var i=0; i<result.length; i++) {
+                    for (var i=0; i<result.fields.length; i++) {
                         var attrib = data.result[i];
                         html += '<table>' +
                                     '<tr>' +
