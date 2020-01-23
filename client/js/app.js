@@ -18,15 +18,51 @@ function updateValue(event) {
 function processConfig(event) {
     console.log('Button was pressed');
     var valuesMap = new Map();
-    var strValuesMap;
+    var jsonStr = "{\"requestData\":{\"processName\":\"Test Name\",\"fields\"[";
 
     for (let [k, v] of this.requestDataMap) {
+        jsonStr += "{\"fieldName\":\"" + k + "\",\"fieldValue\":\"" + v + "\"},";
         console.log('Adding key/value pair - (' + k + ',' + v + ')');
-        valuesMap.set(k, v);
     }
 
-    strValuesMap = JSON.stringify( Array.from(valuesMap) );
+    jsonStr += "]}}";
+
+    console.log('JSON - ' + jsonStr);
+
+    force.apexrest("/Simpli/")
+    .then(result => {
+        console.log(result)
+    })
+    .catch(error => {
+        console.log(error);
+    });
 }
+
+
+    {
+        "requestData" :
+        {
+            "processName":"Example - Account Insert",
+            "fields":[
+                {"fieldValue":"Test Account Name 12534",
+                 "fieldName":"Account Name"},
+                {"fieldValue":"123",
+                 "fieldName":"Number of Employees"},
+                {"fieldValue":"10101",
+                 "fieldName":"Zip"}
+            ]
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 
 function showConfigList() {
     getConfigList(
