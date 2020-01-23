@@ -368,7 +368,7 @@ var force = (function () {
         if (!oauthPlugin) {
             xhr.setRequestHeader("Target-URL", oauth.instance_url);
         }
-        xhr.send(obj.data ? JSON.stringify(obj.data) : undefined);
+        xhr.send(obj.data);
     }
 
     /**
