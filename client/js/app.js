@@ -31,7 +31,7 @@ function processConfig(event) {
 
     console.log('JSON - ' + jsonStr);
 
-    force.apexrest("/Simpli/")
+    force.request("/Simpli/")
     .then(result => {
         console.log(result)
     })
