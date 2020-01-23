@@ -8,11 +8,12 @@ function getConfigDetails(configId, success, error) {
   force.query(soql, success, error);
 }
 
-function updateValue() {
-    console.log('Value updated');
+function updateValue(event) {
+    console.log('Value updated to - ' + event.target.value);
+    console.log('Name updated - ' + event.target.name);
 }
 
-function processConfig() {
+function processConfig(event) {
     console.log('Button was pressed');
 }
 
@@ -91,7 +92,7 @@ function showConfigDetails(configId) {
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Field__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Id_Value__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Return_Field__c + '</td>' +
-                                        '<td padding="5px" width="90px"> + <input type="text" onchange="updateValue()" name="' + attrib.Simpli__External_Name__c + '"></input>' +
+                                        '<td padding="5px" width="90px"><input type="text" onchange="updateValue()" name="' + attrib.Simpli__External_Name__c + '"></input>' +
                                     '</tr>' +
                                 '</table>';
                     }
