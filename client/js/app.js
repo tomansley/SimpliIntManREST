@@ -36,17 +36,26 @@ function processConfig(event) {
 
 
     force.request({path: "/services/apexrest/Simpli/Simpli/", method: "POST", contentType: "application/json", data: jsonStr}, 
-    function (success) {
-        alert("Success: " + JSON.stringify(success));
+    function (result) {
+        alert("Success: " + JSON.stringify(result));
+        var configs = result.records,
+        html = '';
+        for (var i=0; i<result.length; i++) {
+            html += '<li class="table-view-cell"><a href="#configs/'+ result[i].Id +'">' + result[i].Name + '</a></li>';
+        }
+        html =
+            '<div class="page">' +
+            '<header class="bar bar-nav">' +
+                '<h1 class="title">Configurations</h1>' +
+            '</header>' +
+            '<div class="content">' +
+                '<ul class="table-view config-list">' + html + '</ul>' +
+            '</div>' +
+            '</div>';
+        slider.slidePage($(html));
     }, 
     function (error) {
         alert("Error: " + JSON.stringify(error));
-    })
-    .then(success => {
-        console.log(success)
-    })
-    .catch(error => {
-        console.log(error);
     });
 }
 
