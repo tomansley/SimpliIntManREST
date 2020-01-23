@@ -351,9 +351,10 @@ var force = (function () {
                     );
                 } else {
                     console.error(xhr.responseText);
-                    var error = xhr.responseText ? JSON.parse(xhr.responseText) : {message: 'An error has occurred'};
+                    alert(xhr.responseText);
+                    //var error = xhr.responseText ? JSON.parse(xhr.responseText) : {message: 'An error has occurred'};
                     if (errorHandler) {
-                        errorHandler(error);
+                        errorHandler(xhr.responseText);
                     }
                 }
             }
