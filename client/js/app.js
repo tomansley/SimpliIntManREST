@@ -38,20 +38,35 @@ function processConfig(event) {
     force.request({path: "/services/apexrest/Simpli/Simpli/", method: "POST", contentType: "application/json", data: jsonStr}, 
     function (result) {
         alert("Success: " + JSON.stringify(result));
-        var configs = result.records,
-        html = '';
-        for (var i=0; i<result.length; i++) {
-            html += '<li class="table-view-cell"><a href="#configs/'+ result[i].Id +'">' + result[i].Name + '</a></li>';
-        }
         html =
-            '<div class="page">' +
+        '<div class="page">' +
             '<header class="bar bar-nav">' +
-                '<h1 class="title">Configurations</h1>' +
+                '<a class="btn btn-link btn-nav pull-left" href="#"><span class="icon icon-left-nav"></span>Back</a>' +
+                '<h1 class="title">Configuration Attributes</h1>' +
             '</header>' +
             '<div class="content">' +
-                '<ul class="table-view config-list">' + html + '</ul>' +
-            '</div>' +
-            '</div>';
+                '<div class="card">' +
+                    '<table>' +
+                        '<tr>' +
+                            '<th padding="5px" width="190px">Field Name</th>' +
+                            '<th padding="5px" width="90px">Value</th>' +
+                            '<th padding="5px" width="90px">Field Index</th>' +
+                        '</tr>' +
+                    '</table>';
+
+                    for (var i=0; i<result.length; i++) {
+                        var attrib = data.result[i];
+                        html += '<table>' +
+                                    '<tr>' +
+                                        '<td padding="5px" width="190px">' + attrib.fieldName + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.fieldValue + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.fieldIndex + '</td>' +
+                                    '</tr>' +
+                                '</table>';
+                    }
+        html += '</div>' +
+        '</div>' +
+        '</div>';
         slider.slidePage($(html));
     }, 
     function (error) {
