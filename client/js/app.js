@@ -114,10 +114,10 @@ function showConfigDetails(configId) {
                     '<div class="card">' +
                         '<table>' +
                             '<tr>' +
+                                '<th padding="5px" width="190px">External Name</th>' +
                                 '<th padding="5px" width="190px">Name</th>' +
                                 '<th padding="5px" width="90px">Allow Overrides</th>' +
                                 '<th padding="5px" width="90px">Allow Multiples</th>' +
-                                '<th padding="5px" width="90px">External Name</th>' +
                                 '<th padding="5px" width="90px">Is Required</th>' +
                                 '<th padding="5px" width="90px">Type</th>' +
                                 '<th padding="5px" width="90px">Value</th>' +
@@ -135,11 +135,11 @@ function showConfigDetails(configId) {
                         var attrib = data.records[i];
                         html += '<table>' +
                                     '<tr>' +
+                                        '<td padding="5px" width="190px">' + attrib.Simpli__External_Name__c + '</td>' +
                                         '<td padding="5px" width="190px">' + attrib.Name + '</td>' +
+                                        '<td padding="5px" width="90px">' + attrib.Simpli__Is_Required__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Allow_Overrides__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Allow_Multiples__c + '</td>' +
-                                        '<td padding="5px" width="90px">' + attrib.Simpli__External_Name__c + '</td>' +
-                                        '<td padding="5px" width="90px">' + attrib.Simpli__Is_Required__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Type__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Value__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__External_Index__c + '</td>' +
