@@ -35,7 +35,13 @@ function processConfig(event) {
 
 
 
-    force.request({path: "/services/apexrest/Simpli/Simpli/", method: "POST", contentType: "application/json", data: jsonStr}, success, error)
+    force.request({path: "/services/apexrest/Simpli/Simpli/", method: "POST", contentType: "application/json", data: jsonStr}, 
+    function (success) {
+        alert("Success: " + JSON.stringify(success));
+    }, 
+    function (error) {
+        alert("Error: " + JSON.stringify(error));
+    })
     .then(success => {
         console.log(success)
     })
