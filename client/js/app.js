@@ -9,8 +9,10 @@ function getConfigDetails(configId, success, error) {
 }
 
 function updateValue(event) {
-    console.log('Value updated to - ' + event.target.value);
-    console.log('Name updated - ' + event.target.name);
+    var name = event.target.name;
+    var value = event.target.value;
+    this.requestDataMap.set(name, value);
+    console.log('Value updated - ' + event.target.name + ' - ' + event.target.value);
 }
 
 function processConfig(event) {
@@ -92,11 +94,11 @@ function showConfigDetails(configId) {
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Field__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Id_Value__c + '</td>' +
                                         '<td padding="5px" width="90px">' + attrib.Simpli__Lookup_Return_Field__c + '</td>' +
-                                        '<td padding="5px" width="90px"><input type="text" onchange="updateValue()" name="' + attrib.Simpli__External_Name__c + '"></input>' +
+                                        '<td padding="5px" width="90px"><input type="text" onchange="updateValue(event)" name="' + attrib.Simpli__External_Name__c + '"></input>' +
                                     '</tr>' +
                                 '</table>';
                     }
-                    html += '<button type="button" onclick="processConfig()">Process Config</button>'
+                    html += '<button type="button" onclick="processConfig(event)">Process Config</button>'
                     html += '</div>' +
                 '</div>' +
                 '</div>';
@@ -111,3 +113,5 @@ function showConfigDetails(configId) {
 var slider = new PageSlider($('body')); // Initialize PageSlider micro-library for nice and hardware-accelerated page transitions
 router.addRoute('', showConfigList);
 router.addRoute('configs/:id', showConfigDetails);
+
+var requestDataMap = new Map();
