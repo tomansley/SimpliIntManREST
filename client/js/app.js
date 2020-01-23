@@ -4,8 +4,9 @@ function getConfigList(success, error) {
 }
 
 function getConfigDetails(configId, success, error) {
-    var soql = "SELECT Id, Name, Simpli__Allow_Overrides__c, Simpli__Allow_Multiples__c, Simpli__External_Name__c, Simpli__Is_Required__c, Simpli__Type__c, Simpli__Value__c, Simpli__External_Index__c, Simpli__Is_Formula__c, Simpli__Formula__c, Simpli__Is_Lookup__c, Simpli__Lookup_Field__c, Simpli__Lookup_Id_Value__c, Simpli__Lookup_Return_Field__c FROM Simpli__Simpli_Attribute__c WHERE Simpli__External_Name__c != null AND Simpli__Type__c = 'Input' AND Simpli__Parent_Object__c = '" + configId + "'";
-  force.query(soql, success, error);
+    var soql = "SELECT Id, Name, Simpli__Parent_Object__r.Name, Simpli__Allow_Overrides__c, Simpli__Allow_Multiples__c, Simpli__External_Name__c, Simpli__Is_Required__c, Simpli__Type__c, Simpli__Value__c, Simpli__External_Index__c, Simpli__Is_Formula__c, Simpli__Formula__c, Simpli__Is_Lookup__c, Simpli__Lookup_Field__c, Simpli__Lookup_Id_Value__c, Simpli__Lookup_Return_Field__c FROM Simpli__Simpli_Attribute__c WHERE Simpli__External_Name__c != null AND Simpli__Type__c = 'Input' AND Simpli__Parent_Object__c = '" + configId + "'";
+    force.query(soql, success, error);
+    selectedConfigName = success.records[i].Simpli__Parent_Object__r.Name;
 }
 
 function updateValue(event) {
@@ -84,7 +85,7 @@ function showConfigList() {
             html =
                 '<div class="page">' +
                 '<header class="bar bar-nav">' +
-                    '<h1 class="title">Configurations</h1>' +
+                    '<h1 class="title">Simpli Configurations</h1>' +
                 '</header>' +
                 '<div class="content">' +
                     '<ul class="table-view config-list">' + html + '</ul>' +
@@ -107,7 +108,7 @@ function showConfigDetails(configId) {
                 '<div class="page">' +
                 '<header class="bar bar-nav">' +
                 '<a class="btn btn-link btn-nav pull-left" href="#"><span class="icon icon-left-nav"></span>Back</a>' +
-                '<h1 class="title">Configuration Attributes</h1>' +
+                '<h1 class="title">Externally Named Attributes For ' + selectedConfigName + '</h1>' +
                 '</header>' +
                 '<div class="content">' +
                     '<div class="card">' +
@@ -169,3 +170,4 @@ router.addRoute('', showConfigList);
 router.addRoute('configs/:id', showConfigDetails);
 
 var requestDataMap = new Map();
+var selectedConfigName;
