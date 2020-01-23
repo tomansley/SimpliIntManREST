@@ -49,7 +49,7 @@ function processConfig(event) {
                     '<table width="800px">' +
                         '<tr>' +
                             '<th padding="5px" width="190px">Field Name</th>' +
-                            '<th style="text-align: center;" padding="5px" width="90px">Value</th>' +
+                            '<th style="text-align: center; padding-bottom: 15px;" padding="5px" width="90px">Value</th>' +
                         '</tr>' +
                     '</table>';
 
@@ -58,7 +58,7 @@ function processConfig(event) {
                         html += '<table width="800px">' +
                                     '<tr>' +
                                         '<td padding="5px" width="190px">' + attrib.fieldName + '</td>' +
-                                        '<td style="text-align: center;" padding="5px" width="90px">' + attrib.fieldValue + '</td>' +
+                                        '<td style="text-align: center; padding-bottom: 15px;" padding="5px" width="90px">' + attrib.fieldValue + '</td>' +
                                     '</tr>' +
                                 '</table>';
                     }
