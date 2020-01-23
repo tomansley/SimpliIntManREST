@@ -51,20 +51,24 @@ function showConfigDetails(configId) {
                         var attrib = data.records[i];
                         html += '<ul class="table-view">' +
                                     '<li class="table-view-cell">' +
-                                        '<h4>' + attrib.Name + '</h4>' +
-                                        '<p>Allow Overrides: ' + attrib.Simpli__Allow_Overrides__c + '</p>' +
-                                        '<p>Allow Multiples: ' + attrib.Simpli__Allow_Multiples__c + '</p>' +
-                                        '<p>External Name: ' + attrib.Simpli__External_Name__c + '</p>' +
-                                        '<p>Is Required: ' + attrib.Simpli__Is_Required__c + '</p>' +
-                                        '<p>Type: ' + attrib.Simpli__Type__c + '</p>' +
-                                        '<p>Value: ' + attrib.Simpli__Value__c + '</p>' +
-                                        '<p>External Index: ' + attrib.Simpli__External_Index__c + '</p>' +
-                                        '<p>Is Formula: ' + attrib.Simpli__Is_Formula__c + '</p>' +
-                                        '<p>Formula: ' + attrib.Simpli__Formula__c + '</p>' +
-                                        '<p>Is Lookup: ' + attrib.Simpli__Is_Lookup__c + '</p>' +
-                                        '<p>Lookup Field: ' + attrib.Simpli__Lookup_Field__c + '</p>' +
-                                        '<p>Lookup Id Value: ' + attrib.Simpli__Lookup_Id_Value__c + '</p>' +
-                                        '<p>Lookup Return Field: ' + attrib.Simpli__Lookup_Return_Field__c + '</p>' +
+                                        '<table>' +
+                                            '<tr>' +
+                                                '<td>' + attrib.Name + '</td>' +
+                                                '<td>Allow Overrides: ' + attrib.Simpli__Allow_Overrides__c + '</td>' +
+                                                '<td>Allow Multiples: ' + attrib.Simpli__Allow_Multiples__c + '</td>' +
+                                                '<td>External Name: ' + attrib.Simpli__External_Name__c + '</td>' +
+                                                '<td>Is Required: ' + attrib.Simpli__Is_Required__c + '</td>' +
+                                                '<td>Type: ' + attrib.Simpli__Type__c + '</td>' +
+                                                '<td>Value: ' + attrib.Simpli__Value__c + '</td>' +
+                                                '<td>External Index: ' + attrib.Simpli__External_Index__c + '</td>' +
+                                                '<td>Is Formula: ' + attrib.Simpli__Is_Formula__c + '</td>' +
+                                                '<td>Formula: ' + attrib.Simpli__Formula__c + '</td>' +
+                                                '<td>Is Lookup: ' + attrib.Simpli__Is_Lookup__c + '</td>' +
+                                                '<td>Lookup Field: ' + attrib.Simpli__Lookup_Field__c + '</td>' +
+                                                '<td>Lookup Id Value: ' + attrib.Simpli__Lookup_Id_Value__c + '</td>' +
+                                                '<td>Lookup Return Field: ' + attrib.Simpli__Lookup_Return_Field__c + '</td>' +
+                                            '</tr>' +
+                                        '</table>' +
                                     '</li>' +
                                 '</ul>';
                     }
